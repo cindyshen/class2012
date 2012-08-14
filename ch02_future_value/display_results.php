@@ -31,9 +31,7 @@
         exit();
     }
 	
-	//require_once ( "ajfinancial.php");
-	//$present_value = present_worth_SPPWF($future_value, $interest_rate, $years);
-	
+
     // calculate the future value
     // $future_value = $investment;
     // for ($i = 1; $i <= $years; $i++) {
@@ -41,10 +39,18 @@
     // }
 	
 	
-	//$present_value = 0.0;
-	//$SPPWF = 0.0;
-	$SPPWF = 1.0 / pow(1.0 + $interest_rate * .01,  $years);
-	$present_value = $future_value * $SPPWF;
+	//Eduardo's solution
+    $future_value = $present_value;
+    for ($i = 1; $i <= $years; $i++) {
+        $future_value = $future_value/ (1.0 + $interest_rate * .01);
+    }
+	
+	//	Rich Google's solution
+	//	$present_value = $future_value * (1.0 / pow(1.0 + $interest_rate * .01, $years));
+	
+	// mine solution
+	//$SPPWF = 1.0 / pow(1.0 + $interest_rate * .01,  $years);
+	//$present_value = $future_value * $SPPWF;
 
     // apply currency and percent formatting
     //$investment_f = '$'.number_format($investment, 2);

@@ -1,0 +1,10 @@
+/* ./css/main.css */
+
+.hidden {
+	display: none;
+}
+
+.error {
+	display: inline;
+	color: #F00;
+}
