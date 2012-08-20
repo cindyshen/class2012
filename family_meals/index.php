@@ -16,6 +16,6 @@ ActiveRecord\Config::initialize(function($cfg)
 
 <html>
 <body>
-	<p>Hello World!</p>
+	<?php	include 'views/list.php';	?>
 </body>
 </html>
