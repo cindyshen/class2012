@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+/*
+	Website:			Black and White Portfolio
+	File:					main.js
+	Author:				Matthew Campbell
+	Created On:		2012-03-07
+	Revised On:
+	CSS Version: 	2.1
+	
+	Purpose:
+		CSS file for index.html
+	
+	Related Files:
+		index.html
+*/
+
+/* Clear default styling from block level elements */
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, blockquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#page_wrap {
+	position: relative;
+	background-color: white;
+}
+
+#container {
+	background-color: white;
+	width: 960px;
+	margin: 0 auto;
+	font-family: Cambria,'Palatino Linotype','Book Antiqua','URW Palladio L',serif;
+	color: #666666;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #3B3B3B;
+}
+
+/* -------------navbar---------------*/
+#navbar {
+	height: 19px;
+	padding: 20px 0 0 795px;
+}
+
+	#navbar ul {
+		list-style: none;
+	}
+
+		#navbar ul li {
+			float: left;
+			margin-left: 5px;
+		}
+
+/* -------------header---------------*/
+#header h1 {
+	margin: 5px 0 0;
+	padding: 25px 0;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	font-size: 250%;
+}
+
+/* --------------main----------------*/
+#main {
+	float: left;
+	width: 635px;
+	padding-bottom: 25px;
+	padding-right: 25px;
+	border-right: 1px solid #666666;
+}
+
+/* -------------sidebar--------------*/
+	
+#sidebar {
+	width: 275px;
+	margin-left: 685px;
+}
+
+	#sidebar h3 {
+		margin: 20px 0 5px 0;
+	}
+
+	#sidebar #posts p, #sidebar #contact p {
+		padding: 5px 0;
+		border-bottom: 1px solid #666;
+		font-size: 90%;
+	}
+	
+	#sidebar h3+p {
+		border-top: 1px solid #666666;
+	}
+	
+	/* -------------contact form (normal)--------------*/
+	
+	#sidebar .normal fieldset {
+		margin: 20px 0 5px;
+	}
+	
+		#sidebar .normal legend {
+			display: block;
+			width: 100%;
+			margin-bottom: 5px;
+			padding: 0 0 5px 0;
+			border-bottom: 1px solid #666;
+			color: #3B3B3B;
+			font-size: 117%;
+			font-weight: bold;
+		}
+		
+		#sidebar .normal div {
+			padding-bottom: 5px;
+		}
+		
+			#sidebar .normal label {
+				display: inline-block;
+				width: 65px;
+				vertical-align: top;
+			}
+
+			#sidebar .normal input[type="text"], #sidebar .normal textarea {
+				width: 190px;
+				padding: 1px 2px;
+				border: 1px solid #666;
+				font-family: Cambria, 'Palatino Linotype', 'Book Antiqua',
+										'URW Palladio L', serif;
+				font-size: 100%;
+				resize: none;
+			}
+	
+			#sidebar .normal p {
+				display: none;
+			}
+	
+			#sidebar .normal .form_ok_msg {
+				display: block;
+				padding-top: 5px;
+				text-align: center;
+				font-size: 110%;
+				font-weight: bold;
+			}
+	
+			#sidebar .normal .error {
+				display: block;
+				padding-left: 68px;
+				color: #F00;
+			}
+	
+	/* -------------contact form (overlay)--------------*/
+	
+	#sidebar .overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	
+		#sidebar .overlay form {
+			position: absolute;
+			width: 330px;
+			top: 200px;
+			left: 547px;
+			background-color: #F8F8F8;
+			box-shadow: 				0 0 10px 5px #333;
+			-webkit-box-shadow: 0 0 10px 5px #333;
+		}
+	
+			#sidebar .overlay legend {
+				display: block;
+				width: 315px;
+				padding: 3px 0 3px 15px;
+				background-color: #333;
+				color: #FFF;
+				font-size: 120%;
+				font-weight: bold;
+			}
+			
+			#sidebar .overlay div {
+				padding: 5px 0 0 20px;
+			}
+			
+			.ok_icon {
+				background: url("../images/form_buttons_sprite.png") 298px 30px no-repeat;
+			}
+			
+			.error_icon {
+				background: url("../images/form_buttons_sprite.png") 258px 30px no-repeat;
+			}
+			
+			#sidebar .overlay legend+div {
+				margin-top: 10px;
+			}
+			
+			#sidebar .overlay #form_submit {
+				padding: 0 35px 15px 0;
+				background-image: none;
+				text-align: right;
+			}
+		
+				#sidebar .overlay label {
+					display: block;
+					color: #333;
+				}
+				
+				#sidebar .overlay input[type="text"], #sidebar .overlay textarea {
+					width: 270px;
+					padding: 4px 2px;
+					border: 1px solid #ABADB3;
+					font-family: Cambria, 'Palatino Linotype', 'Book Antiqua',
+											 'URW Palladio L', serif;
+					font-size: 100%;
+					resize: none;
+				}
+				
+				#sidebar .overlay p {
+					padding-top: 2px;
+					color: #F00;
+					font-size: 90%;
+				}
+	
+	.hidden {
+		visibility: hidden;
+	}
+	
+	.show {
+		visibility: visible;
+	}
+	
+/* -------------footer---------------*/
+	
+#footer {
+	clear: left;
+	height: 35px;
+	padding: 25px 0;
+	border-top: 1px solid #666666;
+}
+
+	#footer div {
+		float: left;
+		width: 320px;
+		font-size: 80%;
+	}
+	
+	#footer div:first-child {
+		height: 30px;
+	}
+	
+	#footer div:first-child+div {
+		width: 248px;	
+		padding-left: 72px;		
+	}
+	
+		#footer div p {
+			float: left;
+		}	
+
+		#footer div p+p {
+			padding-top: 9px;
+			padding-left: 3px;
+		}
+
+	#social {
+		text-align: right;
+	}
+
+	#social a {
+		text-decoration: none;
+	}
+/* -------------classes--------------*/
+	
+.black_square {
+	display: inline-block;
+	margin-top: 5px;
+	padding: 3px 5px;
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0 3px 5px #444444;
+	-webkit-box-shadow: 0 3px 5px #444444;
+	border-radius: 5px;
+}
+
+.black_square:hover {
+	background-color: white;
+	color: black;
+	text-decoration: none;
+}

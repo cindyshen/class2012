@@ -1,0 +1,34 @@
+/*
+	Website: 				Sample Midterm Solution
+	File:						main.css
+	Developer:      Matthew Campbell
+	Languages Used: CSS2.1
+	Date Created:   2012-03-26
+	Last Revised:   
+
+	Website Description:	
+		Sample solution for midterm
+		
+	Related Files:
+		index.html
+*/
+
+/* Clear default styling from block level elements */
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, 
+fieldset, blockquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.error_label {
+	color: #F00;
+}
+
+.error_box {
+	border-color: #F00;
+}

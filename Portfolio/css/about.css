@@ -1,0 +1,11 @@
+/* about.css */
+
+/* --------------main---------------- */
+#main h2 {
+	margin: 20px 0;
+	color: #F00;
+}
+
+#main p:first-letter {
+	font-size: 200%;
+}

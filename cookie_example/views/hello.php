@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php	
-echo $_COOKIE['username'];
+echo "Hello " . $_COOKIE['username'];
 ?>
 </body>
 </html>

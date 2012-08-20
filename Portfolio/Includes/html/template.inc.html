@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- Header Block
+	Website: 				Black and White Portfolio
+	File:						index.html
+	Developer:      Matthew Campbell
+	Languages Used: XHTML 1.0
+	Date Created:   2012-03-07
+	Last Revised:   
+
+	Website Description:
+		Black and white portfolio		
+	
+	External files:
+		./css/main.css
+		./js/main.js
+-->
+	
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	
+	<!-- Favicon links
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	-->
+	
+	<!-- CSS link -->
+	<link href="./css/main.css" rel="stylesheet" type="text/css" />	
+	PHP_CSS_LINK
+	
+	<title>PHP_TITLE</title>
+</head>
+<body>
+	<div id="page_wrap">
+		<div id="container">	
+			<div id="navbar">
+				<ul>
+					<li><a href="./">home</a></li>
+					<li><a href="./?p=a">about</a></li>
+					<li><a href="#">work</a></li>
+					<li><a href="#">blog</a></li>
+				</ul>
+			</div> <!-- navbar -->
+			
+			<div id="header">
+				<h1>Welcome to the portfolio of Matthew Campbell, Internet Ninja/Fainting Goat</h1>		
+			</div> <!-- header -->
+			
+			<div id="main">
+			PHP_MAIN
+			</div> <!-- main -->
+			
+			<div id="sidebar">
+			
+				<div id="posts">
+					<h3>Recent Posts</h3>
+					<p>
+						10.17 
+						<a href="#">Why my avatar is the best.</a>
+					</p>
+					<p>
+						10.17 
+						<a href="#">Why my avatar is the best.</a>
+					</p>
+					<p>
+						10.17 
+						<a href="#">Why my avatar is the best.</a>
+					</p>
+					<p>
+						10.17 
+						<a href="#">Why my avatar is the best.</a>
+					</p>
+					<p>
+						10.17 
+						<a href="#">Why my avatar is the best.</a>
+					</p>
+					
+					<a href="#" class="black_square">More recent posts</a>
+					
+				</div><!-- posts -->
+				
+				<div id="contact">
+					<h3><a id="load_form" href="#contact_form">Contact Info</a></h3>
+					<p>Matthew Campbell - <a href="#">LinkedIn</a></p>
+					<p>Personal Site: <a href="#">website.com</a></p>
+					<p>Twitter: <a href="#">@twitter</a></p>
+					<p>Status: Interested in full-time opportunities</p>
+				</div><!-- contact -->
+			
+				<div id="contact_form" class="normal">
+					<form action="./?p=s" method="post">
+						<fieldset>
+							<legend>Contact Me</legend>
+							<div>
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" 
+									value="PHP_DATA_NAME" maxlength="80" />
+								<p class="PHP_ERR_NAME">Please enter your name.</p>
+							</div>
+							<div>
+								<label for="email">Email</label>
+								<input type="text" id="email" name="email" 
+									value="PHP_DATA_EMAIL" maxlength="100" />
+								<p class="PHP_ERR_EMAIL">Please enter a valid email.</p>
+							</div>
+							<div>
+								<label for="phone">Phone</label>
+								<input type="text" id="phone" name="phone" 
+									value="PHP_DATA_PHONE" maxlength="15" />
+								<p class="PHP_ERR_PHONE">
+									Please enter a valid phone number (optional).
+								</p>
+							</div>
+							<div>
+								<label for="message">Message</label>
+								<textarea id="message" name="message"
+									rows="4" cols="20" maxlength="65000">PHP_DATA_MESSAGE</textarea>
+								<p class="PHP_ERR_MESSAGE">
+									Please describe briefly what you require.
+								</p>
+							</div>
+							<div id="form_submit">
+								<input type="submit" class="black_square" value="Send" />
+							</div>
+							<p class="form_ok_msg">PHP_FORM_OK</p>
+						</fieldset>
+						<input type="hidden" name="page" value="PHP_FORM_HIDDEN" />
+					</form>
+				</div>
+			</div> <!-- sidebar -->
+			
+			<div id="footer">
+			
+				<div>
+					&copy;2011 Matthew Campbell,
+					<br />
+					All Rights Reserved
+				</div>
+				<div>
+					<p>
+						<a href="#">
+							<img src="./images/rss.png" alt="RSS" height="32" width="32" />
+						</a>
+					</p>
+					<p>
+						<a href="#">
+							RSS Feed 
+						</a>
+						<span id="rss_sub">999</span> subscribers
+					</p>
+				</div>
+				<div id="social">
+					<a href="#">
+						<img src="./images/blogger.png" alt="Blogger" height="32" width="32" />
+					</a>
+					<a href="#">
+						<img src="./images/linkedin.png" alt="LinkedIn" height="32" width="32" />
+					</a>
+					<a href="#">
+						<img src="./images/twitter.png" alt="Twitter" height="32" width="32" />
+					</a>
+					<a href="#">
+						<img src="./images/facebook.png" alt="Facebook" height="32" width="32" />
+					</a>
+				</div>
+			
+			</div> <!-- footer -->
+		</div> <!-- container -->
+	</div> <!-- page_wrap -->
+	<!-- JavaScript link --> 
+	<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
