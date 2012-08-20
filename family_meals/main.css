@@ -1,0 +1,40 @@
+ 
+/* Clear default styling fram block level elements */
+body, div, h1, h2, h3, h4, h5, h6, h6, p, ul, ol, li, dl, dt, dd, img, form,
+fieldset, blockquote{
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+table{
+	margin: 30px;
+	border: 1.5px solid black;
+	border-collapse: collapse;
+	}
+
+thead{
+	border: 1px solid black;
+}
+
+th, td{
+	text-align:right;
+}
+
+th, td{	
+	padding: 2px 10px;
+	}
+
+thead, th, td{
+	border: 1px solid black;
+	}
+	
+label{
+		display: inline-block;
+		width: 80px;
+	}
+		
+ input{
+		width: 100px;
+	}	
+	

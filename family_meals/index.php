@@ -1,3 +1,9 @@
+<!-- the head section -->
+<head>
+	<title>Family Meals</title>
+  	<link rel="stylesheet" type="text/css"  href="main.css" />
+</head>
+
 <?php
 require '../ActiveRecord/ActiveRecord.php';
 
@@ -12,10 +18,22 @@ ActiveRecord\Config::initialize(function($cfg)
 			)
 	);
 });
+
+if (array_key_exists('add', $_POST))
+{
+	$oMeal = new Meal;
+	$oMeal->date = $_POST['date'];
+	$oMeal->members = $_POST['members'];
+	$oMeal->save();
+}
+
+include 'views/list.php';
+
+include 'views/add.php';
+
 ?>
 
-<html>
-<body>
-	<?php	include 'views/list.php';	?>
-</body>
-</html>
+
+
+	
+
