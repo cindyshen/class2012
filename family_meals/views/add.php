@@ -6,8 +6,10 @@
         </br>  
 		<label>Members:</label>
         <input type="input" name="members" />   
-        </br>               
+        </br>
+        <div id ="bottons">               
 		<input type="submit" name="add" value ="Add" />
+		</div>
 	</form>
 </body>
 </html>

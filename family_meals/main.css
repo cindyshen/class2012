@@ -34,7 +34,10 @@ label{
 		width: 80px;
 	}
 		
- input{
+input{
 		width: 100px;
+	}
+
+.bottons{
+		padding: 10px 0;
 	}	
-	

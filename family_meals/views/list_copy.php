@@ -10,7 +10,9 @@
             <th>Members</th>            
         </tr>
      </thead>
-		<?php foreach(Meal::find('all') as $oMeal){ ?> 
+	    <?php $oMealss = new Meal; ?>
+	    <?php $oMeals = $oMealss->find('all'); ?>
+	    <?php foreach($oMeals as $oMeal){ ?>
 		<tr>
 			<td>
 			<?php echo date_format($oMeal->date, "Y-m-d" ) ; ?>
