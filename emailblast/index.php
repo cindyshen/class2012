@@ -27,7 +27,19 @@ if($action == "Subscribe")
 	$oEmail->email = $_POST['email'];
 	$oEmail->save();
 }
+else if ($action == "Delete")
+{
+	$oEmail = Email::find_by_email($_GET['email']);
 
+	if ($oEmail && $oEmail->delete())
+	{
+		echo "The email has been deleted";
+	}
+	else 
+	{
+		echo "The email is unable to delete";
+	}
+}
 // http://localhost/class2012/emailblast/?action=Unsubscribe&email=cindyshen99@hotmail.com
 
 else if ($action == "Unsubscribe")
@@ -45,14 +57,20 @@ else if ($action == "Unsubscribe")
 	exit();
 		
 }
-
-if($action == "Edit")
+else if ($action == "Send")
 {
-	include 'views/edit.php';
+	include 'model/helper.php';
+	sendEmails();
+
+}
+
+if($action == "" || $action =="Send")
+{
+	include 'views/email_form.php';	
 }
 else 
 {
-	include 'views/email_form.php';
+	include 'views/edit.php';
 }
 
 ?>
