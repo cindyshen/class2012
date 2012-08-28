@@ -2,33 +2,23 @@
 <?php include 'views/sidebar.php'; ?>
 
 <div id="content">
-    <p>Vestibulum facilisis lectus quis sapien lacinia vel pretium massa mollis.</br> 
-    Quisque id felis a nibh dictum pulvinar. Integer nec aliquam est. </br> 
-    Aenean sit amet ligula felis, vel tincidunt ligula. Nullam tempus tempor dolor vel dapibus. </br>
-    </p>
-
+<!-- 
+    <h2>Welcome</h2>
+    <p>Fried Rice is located in the heart of Waterloo, Ontario.	An ultimate place for authentic Chinese food.</p>
+-->
     <!-- display product -->
-    <h1>Today's special</h1>
+    <h2>Today's special</h2>
     <?php foreach ($items as $item) : ?>
-        <tr>
-            <td id="product_image_column">
-                <img src="images/thumb/<?php echo $item['thumbImage']; ?>"
-                     alt="&nbsp;">
-            </td>
-            <td>
-                <p>
-                    <?php echo $item['itemName']; ?>
-                    </a>
-                </p>
-                <p>
-                    <b>price:</b>
-                    $<?php echo number_format($item['itemPrice'], 2); ?>
-                </p>
-                <p>
-                    <?php echo $item['itemDescription']; ?>
-                </p>
-            </td>
-        </tr>
+        <div class= "food">			
+				<p class="image">
+					<img src="images/thumb/<?php echo $item['thumbImage']; ?>" width="180" height="135" alt="&nbsp;">
+				</p>
+				<div class="details">	
+					<h4><?php echo $item['itemName']; ?></h4>			
+	                <p>Price: <?php echo number_format($item['itemPrice'], 2); ?> </p>
+	                <p><?php echo $item['itemDescription']; ?></p>					
+				</div>
+		</div>				
     <?php endforeach; ?>
  
 </div>

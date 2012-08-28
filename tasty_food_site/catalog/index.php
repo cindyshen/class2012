@@ -1,8 +1,7 @@
 <?php
 require_once('../util/main.php');
-require_once('../util/tags.php');
 require_once('../model/database.php');
-require_once('../model/product_db.php');
+require_once('../model/item_db.php');
 require_once('../model/category_db.php');
 
 if (isset($_POST['action'])) {
@@ -13,31 +12,36 @@ if (isset($_POST['action'])) {
     $action = 'list_products';
 }
 
+//_POST
+//$action = array_key_exists('action', $_POST)?$_POST['action']: '';
+//_GET
+//$action = array_key_exists('action', $_GET)?$_GET['action']: $action;
+
 switch ($action) {
-    case 'list_products':
-        // get current category
+    case 'list_items':
+        // get current items
         $category_id = $_GET['category_id'];
         if (empty($category_id)) {
             $category_id = 1;
         }
-
-        // get categories and products
+		
+        // get categories and items
         $current_category = get_category($category_id);
         $categories = get_categories();
-        $products = get_products_by_category($category_id);
+        $items = get_items_by_category($category_id);
 
         // Display view
-        include('product_list.php');
+        include('item_list.php');
         break;
-    case 'view_product':
+    case 'view_item':
         $categories = get_categories();
 
         // Get product data
-        $product_id = $_GET['product_id'];
-        $product = get_product($product_id);
+        $item_id = $_GET['item_id'];
+        $item = get_item($item_id);
 
         // Display product
-        include('product_view.php');
+        include('item_view.php');
         break;
 }
 ?>

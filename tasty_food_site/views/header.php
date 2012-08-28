@@ -5,14 +5,28 @@
     <!-- the head section -->
     <head>
         <title>Tasty Food</title>
-        <link rel="stylesheet" type="text/css" href="views/main.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $app_path ?>main.css" />
     </head>
 
     <!-- the body section -->
     <body>
     <div id="page">
-        <div id="header">
-            <h1>Tasty Food</h1>
-        </div>
+			<div id="header">
+				<h1><a href="<?php echo $app_path ?>">Fried Dumpling</a></h1>
+				<ul id="navbar">
+					<li>
+						<a href="<?php echo $app_path ?>index.php">Home</a>
+					</li>
+					<li>
+						<a href="#">Menu</a>
+					</li>
+					<li>
+						<a href="#">Order</a>
+					</li>
+					<li>
+						<a href="#">Contact us</a>
+					</li>
+				</ul>			 	 				
+			</div><!-- header -->
         <div id="main">
 

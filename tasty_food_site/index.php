@@ -1,5 +1,5 @@
 <?php
-
+require_once('util/main.php');
 require_once('model/database.php');
 require_once('model/category_db.php');
 require_once('model/item_db.php');
