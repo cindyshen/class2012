@@ -17,8 +17,14 @@ padding: 0;
 border: 0;
 }
 
+body {
+	background-color: #1C261B;
+	font-family:Cambria,'Palatino Linotype','Book Antiqua','URW Palladio L',serif;
+}
+
 
 /* the styles for the div tags that divide the page into sections */
+
 #page {
     width: 960px;
     margin: 0 auto;
@@ -41,7 +47,6 @@ border: 0;
 		
 	#header #navbar {
 		overflow: hidden;
-		margin_top: 300px;
 		border-bottom: 3px solid #774B4D;
 		padding: 5px 30px;
 		list-style: none;
@@ -110,12 +115,11 @@ border: 0;
 
 #content {
     float: left;  
-    padding: 15px 0;    
+    padding: 15px;    
 }
 
 	#content h2 {
-		    padding: 5px;
-		   	font-family: Constantina,Georgia,'Nimbus Roman No9 L',serif;	
+		    padding: 5px;		   	
 			color: #701707;
 			font-size: 150%;
 			font-weight: bold;
@@ -138,19 +142,20 @@ border: 0;
 		padding-left: 10px;		
 	}
 		
-	#content h4{
-			padding: 15px 0px;			
+	#content h4 {
+			padding: 10px 0px;			
 		   	font-family: Constantina,Georgia,'Nimbus Roman No9 L',serif;	
 			color: #DA983C;
-			font-size: 120%;
+			font-size: 110%;
 			font-weight: bold;
 	}
 	
-	#content p{
-			font-size: 120%;
+	#content p, label {
+			font-size: 100%;
+			color: #701707;	
 	}
 
-	#contentt form input{ 
+	#contentt form input { 
 		margin: 3px 0 5px;
 		padding: 5px;
 		font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;					
@@ -161,67 +166,17 @@ border: 0;
 .space {
 	height: 15px; 
 }	
-	
+
+.special {
+	color: red;
+}
 #footer {
     clear: both;
-    margin-top: 1em;
-    padding-right: 1em;
+    margin: 10px 0;
     border-top: 2px solid #774B4D;
 }
 #footer p {
-    text-align: right;
-    font-size: 80%;
-    margin: 1em 0;
-}
-/********************************************************************
-* Styles for classes
-********************************************************************/
-.right {
-    text-align: right;
-}
-.left {
-    text-align: left;
-}
-/********************************************************************
-* Other styles for the Product Manager application
-********************************************************************/
-#add_edit_product_form {
-    margin: .5em 0 2em;
-}
-#add_edit_product_form label {
-    width: 8em;
-    padding-right: 1em;
-    padding-bottom: .5em;
-    text-align: right;
-    float: left;
-}
-#add_edit_product_form input {
-    float: left;
-}
-#add_edit_product_form input[text] {
-    width: 25em;
-}
-#add_edit_product_form textarea {
-    width: 25em;
-}
-#edit_button_form {
-    float: left;
-    margin-right: .5em;
-}
-#product_image_column {
-    width: 8em;
     text-align: center;
-}
-#category_table form {
-    margin: 0;
-}
-#category_table td {
-    margin: 0;
-    padding: 0 .5em;
-}
-#add_category_form  form {
-    margin: 0;
-}
-#add_category_form input {
-    margin-right: .5em;
+    font-size: 80%;
+    margin: 5px 0;
 }

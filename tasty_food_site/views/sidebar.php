@@ -1,7 +1,7 @@
 <div id="sidebar">
-    <ul>
-        <h2>Main Menu</h2>
-            <!-- display links for all categories -->
+	<h2>Main Menu</h2> 
+    <ul>           
+        <!-- display links for all categories -->
         <?php foreach ($categories as $category) : ?>
         <li>
            	<a href="<?php echo $app_path . 'catalog?action=list_items' .
