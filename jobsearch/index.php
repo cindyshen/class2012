@@ -1,3 +1,72 @@
-<?php
+ <?php
+ 
+ //***********************************
+ // connect to database
+ //***********************************
+ 
+ require '../ActiveRecord/ActiveRecord.php';
+ 
+ ActiveRecord\Config::initialize(function($cfg)
+ {
+ 	$cfg->set_model_directory('model');
+ 	$cfg->set_connections(
+ 			array(
+ 					'development' => 'mysql://root:@localhost/jobs',
+ 					'test' => 'mysql://username:password@localhost/test_database_name',
+ 					'production' => 'mysql://username:password@localhost/production_database_name'
+ 			)
+ 	);
+ });
+ 
+ //***********************************
+ // scrape the rss feed of jobs
+ //***********************************
+ 
+ // 
+ $oJob = new Job;
+ 
+ header("Content-Type: text/plain");
+ $sIn = file_get_contents("http://www.wowjobs.ca/wowrss.aspx?q=Web+Developer&l=N2T1G8&s=&sr=25&t=30&f=r&e=&si=A&Dup=H");
+ if(preg_match_all("|<item(.*)</item>|U", $sIn, $aItem)){
+ 	
+ 	//print_r($aIn);
+ 	
+ 	foreach($aItem[0] as $sItem)
+ 	{
+ 	 	 if(preg_match_all("|<guid(.*)</guid>|U", $sItem, $aGuid)){
+  	 	 	//echo $aGuid[0][0]  . "\n";
+ 			$oJob->guid =  $aGuid[0][0];
+ 		}
+ 		if(preg_match_all("|<title(.*)</title>|U", $sItem, $aTitle)){
+ 			$sTitle = preg_replace('/<!\[CDATA\[/', '', $aTitle[0][0]);
+ 			$sTitle = preg_replace('/\]\]>/', '', $sTitle);
+ 			//echo strip_tags($sTitle) . "\n";
+ 			$oJob->title =  $sTitle;
+ 		}
+ 	 	if(preg_match_all("|<description(.*)</description>|U", $sItem, $aDescription)){ 	 		
+ 			//echo $aDescription[0][0]  . "\n";
+ 	 		$oJob->description =  $aDescription[0][0];
+ 		}
+ 	 	if(preg_match_all("|<link(.*)</link>|U", $sItem, $aLink)){
+ 			//echo $aLink[0][0]  . "\n";
+ 	 		$oJob->link =  $aLink[0][0];
+ 		}
+ 	 	if(preg_match_all("|<pubDate(.*)</pubDate>|U", $sItem, $aDate)){
+ 			//echo $aDate[0][0]  . "\n";
+ 	 		$oJob->pubdate =  $aDate[0][0];
+ 		}
+ 	 	if(preg_match_all("|<author(.*)</author>|U", $sItem, $aAuthor)){
+ 			//echo $aAuthor[0][0]  . "\n";
+ 	 		$oJob->author =  $aAuthor[0][0] ;
+ 		}
+ 		//echo $sItem . "\n";
+ 		
+ 		$oJob->save();
+ 	}
+ }else{
+ 	echo "nothing to display";
+ }
+
+
 	include 'views/list_jobs.php';
 ?>
