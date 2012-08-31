@@ -35,8 +35,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `pubdate` date DEFAULT NULL,
   `author` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `guid` (`guid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `jobs`
