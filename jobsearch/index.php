@@ -22,14 +22,15 @@
  // scrape the rss feed of jobs
  //***********************************
  
- $oJob = new Job;
- 
+  
  header("Content-Type: text/plain");
  $sIn = file_get_contents("http://www.wowjobs.ca/wowrss.aspx?q=Web+Developer&l=N2T1G8&s=&sr=25&t=30&f=r&e=&si=A&Dup=H");
  if(preg_match_all("|<item(.*)</item>|U", $sIn, $aItem)){ 	
  	 	
  	foreach($aItem[0] as $sItem)
  	{
+ 	 	 $oJob = new Job;
+ 	 	 
  	 	 if(preg_match_all("|<guid(.*)</guid>|U", $sItem, $aGuid)){
   	 	 	//echo $aGuid[0][0]  . "\n";
  			$sGuid =  preg_replace ('/<[^>]*>/', '', $aGuid[0][0]); 			
