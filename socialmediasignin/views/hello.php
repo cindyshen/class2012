@@ -1,5 +1,3 @@
-<html><body>Hello 
 <?php
-echo $_COOKIE['username'];
+print_r($oProfile);
 ?>
-</body></html>

@@ -1,11 +1,8 @@
-<?php 
+<?php
 
-//_POST
-$action = array_key_exists('action', $_POST)?$_POST['action']: '';
-//_GET
-$action = array_key_exists('action', $_GET)?$_GET['action']: $action;
+$action = (array_key_exists('action', $_POST)?$_POST['action']: ''); 
+$action = (array_key_exists('action', $_GET)?$_GET['action']: $action);
 
-// connect to database
 require '../ActiveRecord/ActiveRecord.php';
 
 ActiveRecord\Config::initialize(function($cfg)
@@ -20,57 +17,33 @@ ActiveRecord\Config::initialize(function($cfg)
 	);
 });
 
-if($action == "Subscribe")
-{
-	//print_r ($_POST);
+if($action == 'Subscribe'){
 	$oEmail = new Email;
 	$oEmail->email = $_POST['email'];
 	$oEmail->save();
-}
-else if ($action == "Delete")
-{
+}elseif($action == 'Delete'){
 	$oEmail = Email::find_by_email($_GET['email']);
-
-	if ($oEmail && $oEmail->delete())
-	{
-		echo "The email has been deleted";
+	if($oEmail && $oEmail->delete()){
+		echo "1 email deleted";
+	}else{
+		echo "0 emails deleted";
 	}
-	else 
-	{
-		echo "The email is unable to delete";
-	}
-}
-// http://localhost/class2012/emailblast/?action=Unsubscribe&email=cindyshen99@hotmail.com
-
-else if ($action == "Unsubscribe")
-{
+}elseif($action == 'Unsubscribe'){
 	$oEmail = Email::find_by_email($_GET['email']);
-	print_r ($_GET);
-	if ($oEmail && $oEmail->delete())
-	{
-	echo "You have been unsubscribed";	
+	if($oEmail && $oEmail->delete()){
+		echo "You have been unsubscribed";
+	}else{
+		echo "Unsubscription failed";
 	}
-	else
-	{
-		echo "Unsubscribe failed";
-	}	 
 	exit();
-		
-}
-else if ($action == "Send")
-{
-	include 'model/helper.php';
+}elseif($action == 'Send'){
+	include 'model/helpers.php';
 	sendEmails();
-
 }
 
-if($action == "" || $action =="Send")
-{
-	include 'views/email_form.php';	
-}
-else 
-{
+if($action == '' || $action == 'Send'){
+	include 'views/email.php';
+}else{
 	include 'views/edit.php';
 }
-
 ?>
